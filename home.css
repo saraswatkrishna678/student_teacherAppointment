@@ -1,0 +1,40 @@
+body{
+    background-color: aqua;
+}
+img{
+    margin-left: 785px;
+height: 460px;
+padding: 27px;
+margin-top: 66px;
+border-radius: 5px;
+animation-duration: 4s;
+  animation-iteration-count: 3;
+}
+h2{
+   margin-top: -405px;
+    margin-left: -76px;
+    font-style: italic;
+    font-size: xx-large;
+    font-weight: bold;
+    background-image: linear-gradient(rgb(0, 0, 0), rgba(219, 230, 18, 0.66));
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    /* transform: translate(-50%,-50%); */
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+    animation: h2 5s linear infinite alternate;
+}
+@keyframes h2 {
+    100%{
+        background-position:0 0;
+    }
+    
+}
+button{
+    margin-left: 759px;
+    margin-top: 238px;
+    /* background-color: blue; */
+    box-shadow: 20px ;
+    width: 130px;
+    height: 36px;
+}

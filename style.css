@@ -1,0 +1,37 @@
+body{
+    /*height: 100%;*/
+    background-image: url(bg3.jpg);
+    background-size: 1700px;
+    width: 200px;height: 200px;
+    /*background-repeat: no-repeat;*/
+
+}
+.nav{
+    top: 20px;
+    width: 600px;
+    right: 20px;
+    display: inline;
+    position: absolute;
+    font-size: 30px;
+}
+.nav>a{
+    margin: 40px;
+    /*display: inline-block;*/
+    color: antiquewhite;
+    text-decoration: none;
+    transition: 0.5s;
+
+
+}
+.btn{
+    height: 30px;
+    font-size: large;
+    width: 71px;
+    height: 31px;
+    font-size: 20px;
+    font-family: monospace;
+}
+
+
+
+

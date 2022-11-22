@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="captcha.css">
+    <link rel="stylesheet" href=
+            "https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+          integrity=
+                  "sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+          crossorigin="anonymous">
+    <title>REGISTRATION</title>
+    <script>
+        var captcha;
+        function generate() {
+
+
+            document.getElementById("submit").value = "";
+
+
+            captcha = document.getElementById("image");
+            var uniquechar = "";
+
+            const randomchar =
+                "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            for (let i = 1; i < 5; i++) {
+                uniquechar += randomchar.charAt(
+                    Math.random() * randomchar.length)
+            }
+
+            captcha.innerHTML = uniquechar;
+        }
+
+        function printmsg() {
+            const usr_input = document
+                .getElementById("Submit").value;
+
+
+            if (usr_input == captcha.innerHTML) {
+                var s = document.getElementById("key")
+                    .innerHTML = "Matched";
+                generate();
+            }
+            else {
+                var s = document.getElementById("key")
+                    .innerHTML = "Not Matched";
+                generate();
+            }
+        }
+
+    </script>
+
+    <style>
+
+
+        html, body{
+            height:100%;
+
+        }
+        html{
+            display:table;
+            margin:auto;
+        }
+        body{
+            display: table-cell;
+            vertical-align: middle;
+            background-color: whitesmoke;
+
+        }
+        .container{
+            border-radius:5px;
+            background-color:sandybrown;
+            padding:20px;
+            width:95%;
+            align-items: centre;
+            height:580px;
+
+            border: 2px solid black;
+            text-align: centre;
+            justify-content: centre;
+
+
+        }
+        input[type=text], [type=number], [type=email],[type=password]{
+            padding:12px;
+            border:none;
+            color:black;
+            background-color: sandybrown;
+            width:200px;
+            margin-left:49px;
+            border-bottom: 2px solid black;
+            height:10px;
+            border-top: none;
+            font-weight: bold;
+
+
+        }
+
+        select{
+            padding:12px;
+            border:none;
+            color:grey;
+            background-color:sandybrown;
+            width:222px;
+            margin-left:49px;
+            border-bottom: 2px solid black;
+            margin-top:0px;
+            font-weight: bold;
+
+
+
+        }
+        label{
+            padding:12px 12px 12px 0;
+            display: inline-block;
+            font-size: 17px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-left:30px;
+        }
+        input[type=submit]{
+            background-color:black;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 4px;
+            align-items: centre;
+            margin-left:255px;
+            margin-top:49px;
+
+        }
+        input[type=submit]:hover{
+            background-color:pink;
+            color:darkblue;
+            font-weight: bolder;
+        }
+
+
+        sub{
+            margin:auto;
+            width:50%;
+            padding:10px;
+        }
+        .st{
+            float:left;
+            width:25%;
+            margin-top:6px;
+
+        }
+        .int{
+            float:left;
+            width:75%;
+            margin-top:6px;
+
+
+        }
+        h1{
+            color:black;
+            padding:2px;
+            display: flex;
+            justify-content: centre;
+            align-items: centre;
+            font-size:25px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-left:129px;
+            border-radius:8px;
+            margin-top: 4px;
+
+
+        }
+        .fst:after{
+            content:"";
+            display: table;
+            clear:both;
+
+
+        }
+        textarea{
+            padding:12px;
+            border:none;
+            color:black;
+            background-color: sandybrown;
+            margin-left:49px;
+            border-bottom: 2px solid black;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            font-weight: bold;
+
+
+        }
+        #image{
+            margin-top: 10px;
+            width: 60px;;
+            padding: 20px;
+            font-weight: 400;
+            padding-bottom: 0px;
+            height: 40px;
+            user-select: none;
+            text-decoration:line-through;
+            font-style: italic;
+            font-size: x-large;
+            /* border: red 2px solid; */
+            margin-left: 10px;
+
+        }
+        #user-input{
+            width:auto;
+            margin-right: 10px;
+            padding: 10px;
+            padding-bottom: 0px;
+            height: 40px;
+
+        }
+        input{
+            border:1px black solid;
+        }
+        .inline{
+            display:inline-block;
+        }
+        #btn{
+            box-shadow: 5px 5px 5px grey;
+            color: aqua;
+            margin: 10px;
+            background-color: brown;
+        }
+        #submit{
+            margin-left:60px;
+        }
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button{
+            -webkit-appearance:none;
+            margin:0px;
+        }
+
+    </style>
+
+</head>
+<body onload="generate()">
+<div class="container">
+    <form action="T_register.php" method="post">
+        <h1> TEACHER REGISTRATION</h1>
+        <div class="fst">
+            <div class="st">
+                <label for="name">  Name:</label>
+            </div>
+            <div class="int">
+                <input type="text" placeholder="Enter Your Full Name" name="name">
+            </div>
+        </div>
+        <div class="fst">
+            <div class="st">
+                <label for="" class="Stuid "> Department:</label>
+            </div>
+            <div class="int">
+                <select name="dep" id="select">
+                    <option disabled selected >Select From Here</option>
+                    <option value="COMPUTER SCIENCE AND ENGINEERING">COMPUTER SCIENCE AND ENGINEERING</option>
+                    <option value="ELECTRICAL AND ELECTRONICS ENGINEERING">ELECTRICAL AND ELECTRONICS ENGINEERING</option>
+                </select>
+            </div>
+        </div>
+        <div class="fst">
+            <div class="st">
+                <label for="name"> Email:</label>
+            </div>
+            <div class="int">
+                <input type="email" placeholder="Enter Email" name="email" required>
+            </div>
+        </div> <div class="fst">
+        <div class="st">
+            <label for="name"> Password:</label>
+        </div>
+        <div class="int">
+            <input type="password" placeholder="Enter new password" name="psd" required>
+        </div>
+    </div>
+        <div class="fst">
+            <div class="st">
+                <label for="name">Contact:</label>
+            </div>
+            <div class="int">
+                <input type="number" placeholder="Enter Mobile number" name="contact" required>
+            </div>
+        </div>
+        <div id="user-input" class="inline">
+            <label for="">Captcha:</label>
+            <input type="text" id="submit"
+                   placeholder="Captcha Code" />
+        </div>
+        <div class="inline" onclick="generate()">
+            <i class="fas fa-sync"></i>
+        </div>
+        <div id="image" class="inline" selectable="False">
+        </div>
+        <p id="key"></p>
+        <div class="sub">
+            <input type="submit" name="register" value="Register">
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
+
+<!--Ready-->
